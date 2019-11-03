@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class zadacha5 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Въведи необходимите часове:");
+        int chasove = scan.nextInt();
+        System.out.println("Въведи дните, с които разполагаш:");
+        int dni = scan.nextInt();
+        System.out.println("Въведи броят на служителите:");
+        int rabotnici = scan.nextInt();
+
+        if(chasove < 0 || chasove > 200000) {
+            System.out.println("1ви ред е извън позволените лимити [0 - 200,000].");
+            return;
+        }
+        if(dni < 0 || dni > 20000) {
+            System.out.println("2ви ред е извън позволените лимити [0 - 20,000].");
+            return;
+        }
+        if(rabotnici < 0 || rabotnici > 200) {
+            System.out.println("1ви ред е извън позволените лимити [0 - 200].");
+            return;
+        }
+
+        int workDays = (((dni)*90)/100);
+        int rabotniChasove = workDays * 10;
+        int ostawat = rabotniChasove - chasove;
+        int nestigat = chasove - rabotniChasove;
+
+        if(rabotniChasove > chasove) {
+            System.out.println("Часовете стигат! Остават " + Math.floor(ostawat) + " часове.");
+        }
+        else {
+            System.out.println("Не стигат чавосете! Трябват още " + Math.floor(nestigat) + " часове.");
+        }
+    }
+}
