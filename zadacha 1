@@ -1,0 +1,66 @@
+import java.util.Scanner;
+ 
+public class zadacha1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Въведи километри:");
+        double km = scan.nextDouble();
+        Scanner scann = new Scanner(System.in);
+        System.out.println("Въведи време (day или night):");
+        String time = scann.nextLine();
+ 
+        if(km < 1 && km > 5000) {
+            System.out.println("Километрите са извън позволените лимити (1 до 5000).");
+            return;
+        }
+ 
+        double tR = taksii(km, time);
+        double aR = avtobuss(km, time);
+        double vR = vlakk(km, time);
+ 
+        if (tR > aR && tR > vR) {
+            //taksito e nai golqmo
+            System.out.println("Най-евтино ще стигнеш с такси и ще ти струва " + tR + "лв.");
+        }
+        if (aR > tR && aR > vR) {
+            //avtobusa e nai golqm
+            System.out.println("Най-евтино ще стигнеш с автобус и ще ти струва " + aR + "лв.");
+        }
+        if (vR > aR && vR > tR) {
+            //vlaka e nai golqm
+            System.out.println("Най-евтино ще стигнеш с влак и ще ти струва " + vR + "лв.");
+        }
+    }
+ 
+    public static double taksii(double km, String time) {
+        if(km < 0.70) {
+            double rezultat = 0;
+            return rezultat;
+        }
+        if(time == "day") {
+            double rezultat = km * 0.79;
+            return rezultat;
+        }
+        if(time == "night") {
+            double rezultat = km * 0.90;
+            return rezultat;
+        }
+        return 0;
+    }
+    public static double avtobuss(double km, String time) {
+        if(km < 20) {
+            double rezultat = 0;
+            return rezultat;
+        }
+        double rezultat = km * 0.09;
+        return rezultat;
+    }
+    public static double vlakk(double km, String time) {
+        if(km < 100) {
+            double rezultat = 0;
+            return rezultat;
+        }
+        double rezultat = 0;
+        return rezultat = km * 0.06;
+    }
+}
