@@ -32,8 +32,6 @@ public class pool {
 				Math.floor((pipe2_w) / water *100)
 				);
 				
-			}
-					
-					
+			}		
 		}
-}
+   }
