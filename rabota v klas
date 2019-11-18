@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+class program {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner (System.in);
+		System.out.print("Enter a: ");
+		int a = scan.nextInt();
+		System.out.print("Enter b: ");
+		int b = scan.nextInt();
+		System.out.print("Enter x: ");
+		int x = scan.nextInt();
+		
+		if (a > b) {
+			int temp = a;
+			a = b;
+			b = temp;
+		}
+		
+		if (x > a && x < b){
+			System.out.println("Middle");
+		} else if (x < a){
+			System.out.println("Far left");
+		} else if (x == a) {
+			System.out.println("Left");
+		} else if (x > b) {
+			System.out.println("Far right");
+		} else if (x == b) {
+			System.out.println("Right");
+		}
+	}
+}
