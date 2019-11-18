@@ -1,3 +1,5 @@
+KOD 1
+
 import java.util.Scanner;
 
 class program {
@@ -28,4 +30,37 @@ class program {
 			System.out.println("Right");
 		}
 	}
+}
+
+KOD 2
+
+import java.util.Scanner;
+
+class program {
+	public static void main(String[] args) {
+	
+		Scanner scan = new Scanner (System.in);
+		double x1 = scan.nextDouble();
+		double y1 = scan.nextDouble();
+		double x2 = scan.nextDouble();
+		double y2 = scan.nextDouble();
+		double x = scan.nextDouble();
+		double y = scan.nextDouble();
+    
+	if (x1 > x2) {
+		double temp = x1; 
+		x1 = x2;
+		x2 = temp;
+	}
+	if (y1 > y2) {
+		double temp = y1;
+		y1 = y2;
+		y2 = temp;
+	}
+	if (x >= x1 && x <= x2 && y >= y1 && y <= y2) {
+		System.out.println("Inside!");
+	} else {
+		System.out.println("Outside");
+	}
+  }
 }
