@@ -62,5 +62,5 @@ class program {
 	} else {
 		System.out.println("Outside");
 	}
-  }
+    }
 }
