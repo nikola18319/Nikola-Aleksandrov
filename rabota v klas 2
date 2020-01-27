@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Neshto {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int InitialSpeed = 0;
+		int FirstTime = 0;
+		int SecondTime = 0; 
+		int ThirdTime = 0;
+		double FirstTimeH = 0.00;
+		double SecondTimeH = 0.00;
+		double ThirdTimeH = 0.00;
+		double TotalKilometers = 0.00;
+		
+		System.out.println("Please input Initial Speed: ");
+		InitialSpeed = scan.nextInt();
+		
+		System.out.println("Please input First Time: ");
+		FirstTime = scan.nextInt();
+		FirstTimeH = FirstTime / 60.00;
+		
+		System.out.println("Please input Second Time: ");
+		SecondTime = scan.nextInt();
+		SecondTimeH = SecondTime / 60.00;
+		
+		System.out.println("Please input Third Time: ");
+		ThirdTime = scan.nextInt();
+		ThirdTimeH = ThirdTime / 60.00;
+		
+		TotalKilometers = (InitialSpeed * FirstTimeH) 
+                          +(InitialSpeed * 1.1 * SecondTimeH) 
+                          +((InitialSpeed * 1.1 * 0.95) * ThirdTimeH);
+		
+		System.out.printf("Total kilometers: %f " , TotalKilometers);
+	 }
+}
