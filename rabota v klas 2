@@ -1,9 +1,11 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Neshto {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
+		DecimalFormat DF = new DecimalFormat ("#.##");
 		int InitialSpeed = 0;
 		int FirstTime = 0;
 		int SecondTime = 0; 
@@ -32,6 +34,7 @@ public class Neshto {
                           +(InitialSpeed * 1.1 * SecondTimeH) 
                           +((InitialSpeed * 1.1 * 0.95) * ThirdTimeH);
 		
-		System.out.printf("Total kilometers: %f " , TotalKilometers);
-	 }
+		String result = DF.format(TotalKilometers);
+		System.out.printf("Total kilometers: %s " , result);
+	}
 }
