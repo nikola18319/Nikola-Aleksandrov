@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class scratch {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int period = scan.nextInt();
+        int izlekuvaniPacienti = 0;
+        int neizlekuvaniPacienti = 0;
+        int broiDoktori = 7;
+
+
+        for(int day = 1 ; day <= period ; day++) {
+            int pacienti = scan.nextInt();
+
+            if ((day % 3 == 0) && (neizlekuvaniPacienti > izlekuvaniPacienti) ) {
+                broiDoktori++;
+            }
+
+            if (pacienti > broiDoktori ) {
+                izlekuvaniPacienti += broiDoktori;
+                neizlekuvaniPacienti += pacienti - broiDoktori;
+            }else {
+                izlekuvaniPacienti += pacienti;
+            }
+        }
+
+        System.out.println("Treated patients: " + izlekuvaniPacienti);
+        System.out.println("Untreated patients: " + neizlekuvaniPacienti);
+
+    }
+}
