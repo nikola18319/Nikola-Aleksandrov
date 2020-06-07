@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class scratch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double budget = Double.parseDouble(scanner.nextLine());
+        String ticket = scanner.nextLine();
+        int peopleCount = Integer.parseInt(scanner.nextLine());
+
+        double price = 0;
+        double transportCost = 0;
+
+        if (ticket.equals("VIP")) {
+            price = peopleCount * 499.99;
+        } else {
+            price = peopleCount * 249.99;
+        }
+        if (peopleCount >= 1 && peopleCount < 5){
+            transportCost = budget * 0.75;
+        }
+
+        if (peopleCount <= 9 && peopleCount >= 5){
+            transportCost = budget * 0.60;
+        }
+
+        if (peopleCount <= 24 && peopleCount >= 10){
+            transportCost = budget * 0.50;
+        }
+
+        if (peopleCount <= 49 && peopleCount >= 25){
+            transportCost = budget * 0.40;
+        }
+
+        if (peopleCount >= 50){
+            transportCost = budget * 0.25;
+        }
+
+        price += transportCost;
+
+        if (price <= budget){
+            System.out.println(String.format("Yes! You have %.2f leva left.",budget - price));
+        }else{
+            System.out.println(String.format("Not enough money! You need %.2f leva.",price - budget));
+        }
+
+    }
+}
