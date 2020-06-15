@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class scratch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int bitcoins = Integer.parseInt(scanner.nextLine());
+        double yuans = Double.parseDouble(scanner.nextLine());
+        double commission = Double.parseDouble(scanner.nextLine()) / 100;
+        double bitcoinsToLeva = bitcoins * 1168;
+        double yuansToDollars = yuans * 0.15d;
+        double dollarsToLeva = yuansToDollars * 1.76d;
+
+        double leva = bitcoinsToLeva + dollarsToLeva;
+        double euro = leva /1.95;
+        double euro1 = euro - (euro * commission);
+        System.out.println(euro1);
+    }
+}
