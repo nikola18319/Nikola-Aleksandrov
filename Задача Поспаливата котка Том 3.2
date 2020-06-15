@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+import static java.lang.System.*;
+
+public class scratch{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int holidays = Integer.parseInt(scanner.nextLine());
+        int workdays = 365 - holidays;
+        int totalplaytime = workdays*63 + holidays*127;
+        double difference = Math.abs(totalplaytime - 30000);
+        int hours = (int) (difference / 60);
+        int minutes = (int) (difference % 60);
+        if (totalplaytime > 30000){
+            out.println("Tom will run away");
+            out.print( hours + " hours and " + minutes + " minutes more for play ");
+            // Math.floor(hours); Math.floor(minutes);
+        } else {
+            out.println("Tom sleeps well");
+            out.print(hours + " hours and " + minutes + " minutes less for play ");
+            // Math.floor(hours); Math.floor(minutes);
+        }
+    }
+}
