@@ -1,0 +1,117 @@
+import java.util.Scanner;
+
+public class scratch {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // top
+        int n = scan.nextInt();
+        int i = 0;
+        while( i < n + 1 ) {
+            System.out.print(".");
+            i++;
+        }
+        i = 0;
+        while (i < 2 * n + 1) {
+            System.out.print("_");
+            i++;
+        }
+        i = 0;
+        while( i < n + 1 ) {
+            System.out.print(".");
+            i++;
+        }
+        System.out.println("");
+
+        int leviTochki = n;
+        int desniTochki = n;
+        int dolenRezultat = 2 * n - 1;
+
+        int redica = 0;
+        while(redica < n) {
+            i = 0;
+            while(i < leviTochki) {
+                System.out.print(".");
+                i++;
+            }
+
+            System.out.print("//");
+
+            i = 0;
+            while(i < dolenRezultat) {
+                System.out.print("_");
+                i++;
+            }
+            System.out.print("\\\\");
+
+            i = 0;
+            while(i < desniTochki) {
+                System.out.print(".");
+                i++;
+            }
+            System.out.println();
+
+            desniTochki--;
+            leviTochki--;
+            dolenRezultat += 2;
+            redica++;
+        }
+        // STOP
+
+        System.out.print("//");
+        i = 0;
+        while(i < (dolenRezultat - 5) / 2) {
+            System.out.print("_");
+            i++;
+        }
+
+        System.out.print("STOP!");
+
+        i=0;
+        while(i < (dolenRezultat - 5) / 2) {
+            System.out.print("_");
+            i++;
+        }
+
+        System.out.print("\\\\");
+
+        System.out.println();
+
+        // bottom
+
+        int LeviTochki = 0;
+        int DesniTochki = 0;
+        int DolenRezultat = 4 * n - 1;
+
+        int red = 0;
+        while(red < n) {
+            i = 0;
+            while(i < LeviTochki) {
+                System.out.print(".");
+                i++;
+            }
+
+            System.out.print("\\\\");
+
+            i = 0;
+            while(i < DolenRezultat) {
+                System.out.print("_");
+                i++;
+            }
+            System.out.print("//");
+
+            i = 0;
+            while(i < DesniTochki) {
+                System.out.print(".");
+                i++;
+            }
+            System.out.println();
+
+            DesniTochki++;
+            LeviTochki++;
+            DolenRezultat -= 2;
+            red++;
+        }
+    }
+}
