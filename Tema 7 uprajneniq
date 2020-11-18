@@ -13,7 +13,7 @@ public class scratch {
             faktoriel = faktoriel * v;
             v--;
         } while (v > 1);
-        System.out.println("n!= " + faktoriel*v);
+        System.out.println("v!= " + faktoriel*v);
     }
 }
 
