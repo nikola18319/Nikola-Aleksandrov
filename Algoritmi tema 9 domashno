@@ -1,0 +1,73 @@
+{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] arr1 = new int[n];
+
+        int chetenIndex = 0;
+        int nechetenIndex = 0;
+        int chetenCount = 0;
+        int nechetenCount = 0;
+        for (int i = 0; i < n; i++) {
+            System.out.printf("Please insert the [%d] element of array :", i);
+            arr1[i] = scan.nextInt();
+
+            if (arr1[i] % 2 == 0) {
+
+                chetenCount++;
+            } else {
+
+                nechetenCount++;
+            }
+        }
+        int[] nechetenArr = new int[nechetenCount];
+        int[] chetenArr = new int[chetenCount];
+
+        for (int i = 0; i < n; i++) {
+            if (arr1[i] % 2 == 0) {
+                chetenArr[chetenIndex] = arr1[i];
+                chetenIndex++;
+            } else {
+                nechetenArr[nechetenIndex] = arr1[i];
+                nechetenIndex++;
+            }
+        }
+
+        System.out.println("Before sorting of even array :");
+        System.out.println(Arrays.toString(chetenArr));
+        System.out.println("Before sorting of odd array :");
+        System.out.println(Arrays.toString(nechetenArr));
+        bublleSort(chetenArr);
+        insertionSort(nechetenArr);
+        System.out.println("After sorting of even array :");
+        System.out.println(Arrays.toString(chetenArr));
+        System.out.println("After sorting of odd array :");
+        System.out.println(Arrays.toString(nechetenArr));
+    }
+    
+    private static void bublleSort(int[] chetenArr) {
+        int free;
+        for (int i = 0; i < chetenArr.length - 1; i++) {
+            for (int j = 0; j < chetenArr.length - 1 - i; j++) {
+                if (chetenArr[j] > chetenArr[j + 1]) {
+                    free = chetenArr[j];
+                    chetenArr[j] = chetenArr[j + 1];
+                    chetenArr[j + 1] = free;
+                }
+            }
+        }
+    }
+
+    private static void insertionSort(int[] nechetenArr) {
+        int n = nechetenArr.length;
+        for (int j = 1; j < n; j++) {
+            int klyuch = nechetenArr[j];
+            int i = j - 1;
+            while ((i > -1) && (nechetenArr[i] > klyuch)) {
+                nechetenArr[i + 1] = nechetenArr[i];
+                i--;
+            }
+            nechetenArr[i + 1] = klyuch;
+        }
+    }
+}
