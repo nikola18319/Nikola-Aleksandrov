@@ -1,0 +1,48 @@
+zadacha 1
+import java.util.Scanner;
+
+public class uktc {
+    public static void main(String[] args) {
+        int[] Masiv = {2, 3, 5, 10, 90, 102};
+        int duljinaNaMasiv = Masiv.length;
+
+        System.out.println("Lenght of array is:" + duljinaNaMasiv);
+    }
+}
+
+zadacha 2
+a) import java.util.Scanner;
+
+public class uktc {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        int[] Masiv = new int[10];
+        int duljinaNaMasiv = Masiv.length;
+        int suma = 0;
+
+        for (int j = 0; j < 10; j++) {
+            Masiv[j] = Integer.parseInt(String.valueOf(scan.nextInt()));
+        }
+        for (int i = 0; i < duljinaNaMasiv; i++) {
+            suma += Masiv[i];
+        }
+        System.out.println(suma);
+    }
+}
+
+b) import java.util.Scanner;
+
+public class uktc {
+    public static void main(String[] args) {
+        int[] Masiv = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int duljinaNaMasiv = Masiv.length;
+        int suma = 0;
+
+        for (int i = 0; i < duljinaNaMasiv; i++) {
+            suma += Masiv[i];
+        }
+        System.out.println(suma);
+    }
+}
