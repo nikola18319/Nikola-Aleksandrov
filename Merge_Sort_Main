@@ -1,0 +1,62 @@
+package Merge_Sort_183;
+
+public class Merge_Sort_Main {
+	public static void Divide(int[] arr, int q,int w ){
+
+	    if(q < w){
+	        int e = (q + w) / 2; 
+
+	        Divide(arr,q,e);
+	        Divide(arr,e+1,w);
+
+	        CompareAndMerge(arr,q,e,w);
+	    }
+	}
+
+	public static void CompareAndMerge(int[] arr1, int q, int e, int w){
+	  int duljinaNaLqvMasiv = e - q + 1;
+	  int duljinaNaDesenMasiv = w - e;
+	  
+	  
+	  int[] l1 = new int[duljinaNaLqvMasiv]; 
+	  int[] r1 = new int[duljinaNaDesenMasiv];
+	  
+	  for (int i = 0; i < duljinaNaLqvMasiv; i++) {
+		l1[i] = arr1[q + 1];
+	}
+	  
+	  for (int j = 0; j < duljinaNaDesenMasiv; j++) {
+		r1[j] = arr1[e + 1 + j];
+	}
+	  
+	
+	  int i = 0;
+	  int j = 0;
+	  int k = q;
+	  
+	  while(i < duljinaNaLqvMasiv && j < duljinaNaDesenMasiv) {
+		  if(l1[i] <= r1[j]) {
+			  arr1[k] = l1[i];
+			  i++;
+		  }else{
+			  arr1[k] = r1[k];
+			  j++;
+		  }
+		  k++;
+	  }
+	  
+	 
+	
+	  while(i < duljinaNaLqvMasiv) {
+		  arr1[k] = l1[i];
+		  i++;
+		  k++;
+	  }
+	  
+	  while(j < duljinaNaDesenMasiv) {
+		  arr1[k] = r1[j];
+		  j++;
+		  k++;
+	  }
+   }
+}
