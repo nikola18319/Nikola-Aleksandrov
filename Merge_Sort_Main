@@ -1,13 +1,13 @@
 package Merge_Sort_183;
 
 public class Merge_Sort_Main {
-	public static void Divide(int[] arr, int q,int w ){
+	public static void slon(int[] arr, int q,int w ){
 
 	    if(q < w){
 	        int e = (q + w) / 2; 
 
-	        Divide(arr,q,e);
-	        Divide(arr,e+1,w);
+	        slon(arr,q,e);
+	        slon(arr,e+1,w);
 
 	        CompareAndMerge(arr,q,e,w);
 	    }
