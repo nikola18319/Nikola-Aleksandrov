@@ -1,0 +1,48 @@
+package Uprajnenie_12;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class uktc {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the length of arrays:");
+        int v = scan.nextInt();
+        int[] array1 = new int[v];
+        int[] array2 = new int[v];
+        for (int i = 0; i < v; i++) {
+            System.out.print("Моля, въведете елемент за първи масив: ");
+            array1[i] = scan.nextInt();
+            System.out.print("Моля, въведете елемент за втори масив: ");
+            array2[i] = scan.nextInt();
+        }
+        int svobodno;
+        for (int i = 0; i < array1.length - 1; i++) {
+            for (int j = 0; j < array1.length - 1 - i; j++) {
+                if (array1[j] < array1[j + 1]) {
+                    svobodno = array1[j];
+                    array1[j] = array1[j + 1];
+                    array1[j + 1] = svobodno;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(array1));
+        int neizpolzvano;
+        for (int i = 0; i < array2.length - 1; i++) {
+            for (int j = 0; j < array2.length - 1 - i; j++) {
+                if (array2[j] < array2[j + 1]) {
+                	neizpolzvano = array2[j];
+                    array2[j] = array2[j + 1];
+                    array2[j + 1] = neizpolzvano;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(array2));
+        
+        if (array1.length == array2.length){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+    }
+}
