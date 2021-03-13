@@ -1,9 +1,9 @@
 zadacha 1:
-package uprajnenie_16;
+package uprajnenie_15;
 
 import java.util.Scanner;
 
-public class uprajnenie_16 {
+public class uprajnenie_15 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -30,11 +30,11 @@ public class uprajnenie_16 {
 }
 
 zadacha 2: 
-package uprajnenie_16;
+package uprajnenie_15;
 
 import java.util.Scanner;
 
-public class uprajnenie_16 {
+public class uprajnenie_15 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
