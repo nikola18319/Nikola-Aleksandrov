@@ -1,0 +1,63 @@
+zadacha 1:
+package uprajnenie_16;
+
+import java.util.Scanner;
+
+public class uprajnenie_16 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Моля, въведете редове: ");
+        int redove = scan.nextInt();
+        System.out.print("Моля, въведете колони: ");
+        int koloni = scan.nextInt();
+        int[][] arr = new int[redove][koloni];
+
+        for (int i = 0; i < redove; i++) {
+            for (int j = 0; j < koloni; j++) {
+                System.out.printf("[%d][%d] = ", i, j);
+                arr[i][j] = scan.nextInt();
+            }
+        }
+        System.out.println();
+        for (int i = 0; i < redove; i++) {
+            for (int j = 0; j < koloni; j++) {
+                System.out.printf("[%d]", arr[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
+
+zadacha 2: 
+package uprajnenie_16;
+
+import java.util.Scanner;
+
+public class uprajnenie_16 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Моля, въведете редове: ");
+        int redove = scan.nextInt();
+        System.out.print("Моля, въведете колони: ");
+        int koloni = scan.nextInt();
+        int[][] arr = new int[redove][koloni];
+
+        for (int i = 0; i < redove; i++) {
+            for (int j = 0; j < koloni; j++) {
+                System.out.printf("[%d][%d] = ", i, j);
+                arr[i][j] = scan.nextInt();
+            }
+        }
+        System.out.println();
+        for (int i = 0; i < redove; i++) {
+            int sum = 0;
+            for (int j = 0; j < koloni; j++) {
+                sum += arr[i][j];
+                System.out.printf("[%d]", arr[i][j]);
+            }
+            System.out.println("[" + sum + "]");
+        }
+    }
+}
