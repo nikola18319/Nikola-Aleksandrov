@@ -1,0 +1,38 @@
+package uprajnenie_16;
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class uprajnenie_16 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Моля, въведете редове: ");
+        int redove = scan.nextInt();
+        System.out.print("Моля, въведете колони: ");
+        int koloni = scan.nextInt();
+        int[][] arr = new int[redove][koloni];
+
+        for (int i = 0; i < redove; i++) {
+            for (int j = 0; j < koloni; j++) {
+                System.out.printf("[%d][%d] = ", i, j);
+                arr[i][j] = scan.nextInt();
+            }
+        }
+        int[] minarr = new int[redove];
+
+        System.out.println();
+        for (int i = 0; i < redove; i++) {
+            int min = Integer.MAX_VALUE;
+            System.out.println(Arrays.toString(arr[i]));
+            for (int j = 0; j < koloni; j++) {
+                if (arr[i][j] < min){
+                    min = arr[i][j];
+                    minarr[i] = min;
+                }
+            }
+        }
+        System.out.println();
+        System.out.println(Arrays.toString(minarr));
+    }
+}
