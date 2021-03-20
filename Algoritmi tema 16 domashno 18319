@@ -1,0 +1,77 @@
+package tema_16_domashno_18319
+
+import java.util.Scanner;
+import java.util.Dictionary;
+import java.util.Hashtable;
+import java.util.Enumeration;
+
+public class tema_16_domashno {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        Dictionary<Integer, String> MyDictionary = new Hashtable<>();
+        // input the elements for the dictionary
+        MyDictionary.put(3, "March");
+        MyDictionary.put(8, "August");
+        MyDictionary.put(12, "December");
+        MyDictionary.put(1, "January");
+        MyDictionary.put(10, "October");
+        MyDictionary.put(5, "May");
+        MyDictionary.put(7, "July");
+        MyDictionary.put(9, "September");
+        MyDictionary.put(11, "November");
+        MyDictionary.put(2, "February");
+        MyDictionary.put(6, "June");
+        MyDictionary.put(4, "April");
+
+        System.out.println();
+
+        // calling the number of elements and printing it
+        int broiElementi = MyDictionary.size();
+        System.out.println("Брой елементи: " + broiElementi);
+        System.out.println();
+
+        // printing the whole dictionary
+        System.out.println("Изпечати целия речник: " + MyDictionary);
+        System.out.println();
+
+        // choosing an option for the elements
+        System.out.print("Изберете опция за търсене по: 1-ключ | 2-стойност: ");
+        int izbor = scan.nextInt();
+
+        // if the choice is 1st, then we input the number of the month and the console prints the name of the month
+        if (izbor == 1) {
+            Enumeration<Integer> klyuchove = MyDictionary.keys();
+            Enumeration<String> stoinosti = MyDictionary.elements();
+
+            System.out.print("Въведете номер на месеца: ");
+            String nomerNaMeseca = scan.next();
+
+            while (klyuchove.hasMoreElements()) {
+                String segashenKlyuch = klyuchove.nextElement().toString();
+                String segashnaStoinost = stoinosti.nextElement();
+
+                if (segashenKlyuch.equals(nomerNaMeseca)) {
+                    System.out.println("Име на месеца: " + segashnaStoinost);
+                }
+            }
+        }
+        // if the choice is the 2nd, then we input the name of the month and the console prints the number of the month
+        if (izbor == 2) {
+            Enumeration<Integer> klyuchove = MyDictionary.keys();
+            Enumeration<String> stoinosti = MyDictionary.elements();
+
+            System.out.print("Въведете име на месеца: ");
+            String imeNaMeseca = scan.next();
+
+            while (klyuchove.hasMoreElements()) {
+                String segashenKlyuch = klyuchove.nextElement().toString();
+                String segashnaStoinost = stoinosti.nextElement();
+
+                if (segashnaStoinost.equals(imeNaMeseca)) {
+                    System.out.println("Номер на месеца: " + segashenKlyuch);
+                }
+            }
+        }
+    }
+}
