@@ -1,0 +1,40 @@
+package oop_uprajnenie_4;
+
+public class zadacha4 {
+    public static void main(String[] args) {
+        int[][] arr = {
+                {15, 4, 2, 62, 2},
+                {3, 3, 4},
+                {3, 4, 3, 62, 2},
+                {9, 3, 2, 5, 2, 1, 2, 6},
+                {3, 4, 2},
+        };
+
+
+        for (int rows = 0; rows < arr.length; rows++) {
+            int[] currentRow = arr[rows];
+            int sum = 0;
+            int max = Integer.MIN_VALUE;
+            int min = Integer.MAX_VALUE;
+
+            for (int cols = 0; cols < currentRow.length; cols++) {
+                int currentElementOnRow = currentRow[cols];
+
+                if (max < currentElementOnRow) {
+                    max = currentElementOnRow;
+                }
+
+                if (min > currentElementOnRow) {
+                    min = currentElementOnRow;
+                }
+
+                sum += currentElementOnRow;
+            }
+
+            double avg = (double) sum / (double) currentRow.length;
+            String formatAvg = String.format("%.2f", avg);
+            System.out.println("Индекс: " + rows + "; Сума: " + sum + "; Максимален елемент: " + max + "; Минимален елемент: " + min + "; Средна стойност: " + formatAvg);
+            System.out.println();
+        }
+    }
+}
