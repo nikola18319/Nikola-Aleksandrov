@@ -1,0 +1,46 @@
+package Dictionary_HashMap_18319;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class uprajnenie_17 {
+    public static void main(String[] args) {
+        HashMap<String, Double> MyDictionary = new HashMap<String, Double>(10);
+
+        MyDictionary.put("Иван", 3.00);
+        MyDictionary.put("Георги", 4.50);
+        MyDictionary.put("Димитър", 5.50);
+        MyDictionary.put("Веселин", 3.50);
+        MyDictionary.put("Цанислав", 4.00);
+        MyDictionary.put("Никол", 6.00);
+
+        System.out.println("HashMap size: " + MyDictionary.size());
+
+        Double tsanevMark = MyDictionary.get("Цанислав");
+        System.out.printf("Цанислав's mark is: %.2f %n", tsanevMark);
+
+        MyDictionary.remove("Цанислав");
+        System.out.println("Цанислав removed");
+
+        System.out.printf("Is Цанислав in the hash table: %b %n", MyDictionary.containsKey("Цанислав"));
+
+        System.out.printf("Is Цанислав in the hash table: %b %n", MyDictionary.containsValue(6.00));
+
+        MyDictionary.put("Никол", 3.25);
+        System.out.println("Никол's mark changed");
+
+        System.out.println("Students and marks: ");
+
+        System.out.println(MyDictionary);
+
+        for (Map.Entry<String, Double> items : MyDictionary.entrySet()) {
+            System.out.printf("Student %s has %.2f%n", items.getKey(), items.getValue());
+        }
+        System.out.printf("There are %d students.%n", MyDictionary.size());
+
+        MyDictionary.clear();
+        System.out.println("Students Dictionary (by hash-map) cleared.");
+
+        System.out.printf("Is hash table empty: %b%n", MyDictionary.isEmpty());
+    }
+}
