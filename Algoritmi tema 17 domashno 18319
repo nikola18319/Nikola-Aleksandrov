@@ -20,7 +20,7 @@ public class hashmap_18319_domashno {
         //push all songs and artists into it
         pushAlbumsAndArtists(albumsAndArtists);
         //create dialog with user
-        albumsAndArtists.get("album1");
+        albumsAndArtists.get("Eminem");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter artist or album for searching (to cancel type END): ");
         String artistOrAlbum = scanner.nextLine();
