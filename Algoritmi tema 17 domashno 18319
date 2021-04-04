@@ -36,7 +36,7 @@ public class hashmap_18319_domashno {
                     }
                 }
             }
-            System.out.print("Enter another album or actor : ");
+            System.out.print("Enter another album or artist : ");
             artistOrAlbum = scanner.next();
         }
 
