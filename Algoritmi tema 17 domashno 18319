@@ -1,0 +1,45 @@
+package uprajnenie_17_domashno;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class hashmap_18319_domashno {
+
+    public static void pushAlbumsAndArtists(HashMap data) {
+        data.put("Eminem", "Kamikaze");
+        data.put("NEFFEX", "Fight Back: The Collection");
+        data.put("V:rgo", "SAUCE KID 3");
+        data.put("2Pac", "All Eyez On Me");
+        data.put("DaBaby", "Blame It on Baby");
+    }
+
+    public static void main(String[] args) {
+        //create data
+        HashMap<String, String> albumsAndArtists = new HashMap<String, String>();
+        //push all songs and artists into it
+        pushAlbumsAndArtists(albumsAndArtists);
+        //create dialog with user
+        albumsAndArtists.get("album1");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter artist or album for searching (to cancel type END): ");
+        String artistOrAlbum = scanner.nextLine();
+
+
+        while (!artistOrAlbum.equals("End")) {
+            if (albumsAndArtists.containsKey(artistOrAlbum)) {
+                System.out.printf("Album [%s] is by %s%n", albumsAndArtists.get(artistOrAlbum), artistOrAlbum);
+            } else if (albumsAndArtists.containsValue(artistOrAlbum)) {
+                for (Map.Entry<String, String> items : albumsAndArtists.entrySet()) {
+                    if (items.getValue().equals(artistOrAlbum)) {
+                        System.out.printf("Artist [%s] sings %s%n", items.getKey(), artistOrAlbum);
+                    }
+                }
+            }
+            System.out.print("Enter another album or actor : ");
+            artistOrAlbum = scanner.next();
+        }
+
+        System.out.println("Goodbye!");
+    }
+}
