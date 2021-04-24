@@ -1,8 +1,8 @@
-package zadacha3;
+package zadacha5;
 
 import java.util.Scanner;
 
-public class zadacha3 {
+public class zadacha5 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
