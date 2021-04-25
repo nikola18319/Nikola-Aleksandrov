@@ -1,0 +1,61 @@
+package Words_Counting;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class tema18 {
+
+    public static void main(String[] args) {
+        try {
+            HashMap<String, Integer> broqchNaDumi = new HashMap<>();
+            Scanner fileZaDumi = new Scanner(new File("C:\\Users\\Nikola\\IdeaProjects\\algoritmi_183\\src\\Words_Counting\\words.txt"));
+            while (fileZaDumi.hasNext()) {
+                String potursenaDuma = fileZaDumi.nextLine().toLowerCase();
+                int powerOfHrana = 0;
+                broqchNaDumi.put(potursenaDuma, powerOfHrana);
+
+                Scanner primerenFile = new Scanner(new File("C:\\Users\\Nikola\\IdeaProjects\\algoritmi_183\\src\\Words_Counting\\sample.txt"));
+
+                while (primerenFile.hasNext()) {
+                    String potursenTekst = primerenFile.next().toLowerCase();
+                    if (potursenTekst.contains(potursenaDuma)) {
+                        powerOfHrana++;
+                    }
+                    broqchNaDumi.put(potursenaDuma, powerOfHrana);
+                }
+                primerenFile.close();
+            }
+
+            fileZaDumi.close();
+            //homework
+
+            //write
+
+            File rezultatenFile = new File("C:\\Users\\Nikola\\IdeaProjects\\algoritmi_183\\src\\Words_Counting\\result.txt");
+            FileWriter pisaneNaRezultatenFile = new FileWriter(rezultatenFile);
+            for (Map.Entry<String, Integer> entry : broqchNaDumi.entrySet()) {
+                pisaneNaRezultatenFile.write(entry.getKey() + " : " + entry.getValue() + "\n");
+            }
+            pisaneNaRezultatenFile.close();
+            //read and print
+            Scanner chetecNaRezultatenFile = new Scanner(rezultatenFile);
+            while (chetecNaRezultatenFile.hasNext()) {
+                String dumaRezultat = chetecNaRezultatenFile.nextLine();
+                System.out.println(dumaRezultat);
+
+            }
+            chetecNaRezultatenFile.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
