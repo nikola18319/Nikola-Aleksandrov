@@ -1,0 +1,148 @@
+zadacha 1
+import java.util.Scanner;
+public class domashno{
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        ArrayList<Integer> arr = new ArrayList<>();
+
+
+        arr.add(3);
+        arr.add(4);
+        arr.add(8);
+        arr.add(5);
+        arr.add(7);
+        arr.add(5);
+        arr.add(2);
+        arr.add(1);
+
+
+        for (int i = 0; i < arr.size(); i++) {
+            if(arr.get(i)%2 == 0){
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+zadacha 2
+import java.util.Scanner;
+public class domashno{
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        ArrayList<Integer> arr = new ArrayList<>();
+
+
+        arr.add(5);
+        arr.add(4);
+        arr.add(8);
+        arr.add(5);
+        arr.add(7);
+        arr.add(8);
+        arr.add(2);
+        arr.add(1);
+
+
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+
+
+        for (int i = 0; i < arr.size(); i++) {
+            if(arr.get(i) > max){
+                max = arr.get(i);
+            }
+            if(arr.get(i) < min){
+                min = arr.get(i);
+            }
+        }
+        System.out.println(min + " " + max);
+    }
+}
+
+zadacha 3
+import java.util.Scanner;
+public class domashno{
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        ArrayList<Integer> arr = new ArrayList<>();
+
+
+        arr.add(3);
+        arr.add(4);
+        arr.add(4);
+        arr.add(5);
+        arr.add(5);
+        arr.add(5);
+        arr.add(2);
+        arr.add(2);
+
+
+        int number = 0;
+        int repetitions = 0;
+        int currentrep = 0;
+
+
+        for (int i = 0; i < arr.size(); i++) {
+            currentrep = 0;
+            int current = arr.get(i);
+            for (int j = 0; j < arr.size(); j++) {
+                if(current == arr.get(j)){
+                    currentrep++;
+                }
+            }
+            
+            if(currentrep > repetitions){
+                repetitions = currentrep;
+                number = current;
+            }
+        }
+
+
+        for (int i = 0; i < repetitions; i++) {
+            System.out.print(number + " ");
+        }
+    }
+}
+
+zadacha 4
+import java.util.Scanner;
+public class domashno{
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        String text = scanner.nextLine();
+        String[] arr = text.split(" ");
+
+
+        for (int i = 0; i < arr.length; i++) {
+            String[] smallarr = arr[i].split("");
+
+
+            for (int j = 0; j < smallarr.length/2; j++) {
+                String buff = smallarr[j];
+                smallarr[j] = smallarr[smallarr.length-j-1];
+                smallarr[smallarr.length-j-1] = buff;
+            }
+            String all = "";
+            for (int j = 0; j < smallarr.length; j++) {
+                all+= smallarr[j];
+            }
+            arr[i] = all;
+        }
+
+
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum+= Integer.parseInt(arr[i]);
+        }
+
+
+        System.out.println(sum);
+    }
+}
